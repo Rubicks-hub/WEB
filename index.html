@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131f">
+  <meta name="description" content="Una pequeña aventura interactiva de cumpleaños.">
+  <title>Una partida especial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio"><span class="brand-mark">✦</span> SAVE POINT <span class="brand-sub">/ EDICIÓN ESPECIAL</span></a>
+    <div class="hud"><span class="status-dot"></span><span id="hudText">NUEVA PARTIDA DISPONIBLE</span><button id="soundToggle" class="sound" aria-label="Activar sonidos" title="Activar o desactivar sonidos">♫ <span>SONIDO OFF</span></button></div>
+  </header>
+
+  <main>
+    <section class="screen active" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero-wrap">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="line"></span> UNA AVENTURA HECHA PARA CELEBRAR</p>
+          <h1 id="heroTitle">HOY EL<br><em>JUEGO</em><br>ES TUYO<span class="cursor">_</span></h1>
+          <p class="hero-text">Un mundo por explorar. Un personaje por crear.<br>Y una sorpresa esperándote al final.</p>
+          <button id="startBtn" class="primary-btn"><span>▶</span> NUEVA PARTIDA <span class="btn-arrow">↗</span></button>
+          <p class="microcopy">SIN PRISA · GUARDADO AUTOMÁTICO</p>
+        </div>
+        <div class="hero-art" aria-label="Escenario de aventura con una luna y una estrella" role="img">
+          <div class="sun-halo"></div><div class="moon"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">✦</span><span class="star s4">·</span>
+          <div class="mountain back"></div><div class="mountain front"></div>
+          <div class="platform"></div><div class="avatar hero-avatar"><div class="avatar-hair"></div><div class="avatar-face"><i></i><i></i></div><div class="avatar-body"></div><div class="avatar-cape"></div></div>
+          <div class="art-caption"><span>01 / EL COMIENZO</span><span>✦</span><span>PRESS START</span></div>
+          <div class="scanlines"></div>
+        </div>
+      </div>
+      <div class="hero-footer"><span>UNA EXPERIENCIA INTERACTIVA</span><span class="scroll-hint">DESLIZA PARA EXPLORAR <b>↓</b></span><span>VOL. 01 — CUMPLEAÑOS</span></div>
+    </section>
+
+    <section class="screen chapter" id="mapa" aria-labelledby="mapTitle">
+      <div class="section-head"><p class="eyebrow">CAPÍTULO 01 <span class="line"></span> EL MAPA</p><div class="progress-label">PROGRESO <b id="progressText">0 / 3</b></div></div>
+      <h2 id="mapTitle">Pequeñas cosas,<br><em>grandes aventuras.</em></h2>
+      <p class="section-intro">Hay tres destellos escondidos en este lugar. Encuéntralos para abrir el siguiente nivel.</p>
+      <div class="map-world" id="mapWorld">
+        <div class="map-sky"><span class="map-cloud c1"></span><span class="map-cloud c2"></span><span class="map-star">✧</span><span class="map-star">✦</span></div>
+        <div class="map-hill hill1"></div><div class="map-hill hill2"></div><div class="map-path"></div>
+        <button class="collectible gem g1" aria-label="Recoger destello oculto 1">✦</button><button class="collectible gem g2" aria-label="Recoger destello oculto 2">✦</button><button class="collectible gem g3" aria-label="Recoger destello oculto 3">✦</button>
+        <div class="map-sign">BUSCA LOS<br>DESTELLOS <span>→</span></div>
+        <div class="map-figure"><div class="avatar small-avatar"><div class="avatar-hair"></div><div class="avatar-face"><i></i><i></i></div><div class="avatar-body"></div><div class="avatar-cape"></div></div></div>
+        <div class="map-bottom"><span>VALLE DE LOS DESEOS</span><span>TOCA LOS DESTELLOS PARA RECOGERLOS</span><span>ÁREA 01</span></div>
+      </div>
+      <div class="achievement" id="achievement" role="status" aria-live="polite"><span>✦</span><div><b id="achievementTitle">DESTELLO ENCONTRADO</b><small id="achievementSub">Un secreto más cerca.</small></div></div>
+    </section>
+
+    <section class="screen chapter customize" id="personaje" aria-labelledby="customTitle">
+      <div class="section-head"><p class="eyebrow">CAPÍTULO 02 <span class="line"></span> TU PERSONAJE</p><div class="progress-label">PERSONALIZACIÓN <b>ACTIVA</b></div></div>
+      <div class="custom-grid">
+        <div class="custom-copy"><h2 id="customTitle">Tu aventura.<br><em>Tu estilo.</em></h2><p class="section-intro">Arma un look para esta partida. Toca los accesorios para probarlos.</p>
+          <div class="option-group"><span class="option-label">ELIGE UN AURA</span><div class="swatches"><button class="swatch selected" data-color="#f0a65d" style="--swatch:#f0a65d" aria-label="Aura ámbar"></button><button class="swatch" data-color="#7fd3bf" style="--swatch:#7fd3bf" aria-label="Aura menta"></button><button class="swatch" data-color="#b9a0f5" style="--swatch:#b9a0f5" aria-label="Aura violeta"></button><button class="swatch" data-color="#ee8294" style="--swatch:#ee8294" aria-label="Aura rosa"></button></div></div>
+          <div class="option-group"><span class="option-label">EQUIPA UN ACCESORIO</span><div class="accessories"><button class="accessory selected" data-item="✦"><span>✦</span> ESTRELLA</button><button class="accessory" data-item="♢"><span>♢</span> CRISTAL</button><button class="accessory" data-item="☾"><span>☾</span> LUNA</button><button class="accessory" data-item="♡"><span>♡</span> CORAZÓN</button></div></div>
+          <div class="loadout"><span>PERFIL</span><b id="loadoutText">ESTRELLA ÁMBAR</b><span class="loadout-check">✓ EQUIPADO</span></div>
+        </div>
+        <div class="character-stage"><div class="stage-label"><span>VISTA PREVIA</span><span>PLAYER 01</span></div><div class="stage-grid"></div><div class="stage-glow"></div><div class="character-sprite" id="characterSprite"><div class="sprite-shadow"></div><div class="avatar custom-avatar"><div class="avatar-hair"></div><div class="avatar-face"><i></i><i></i></div><div class="avatar-body"></div><div class="avatar-cape"></div><span class="hat">✦</span></div></div><div class="stage-bottom"><span>AVENTURERA</span><span class="level">LVL. 01</span></div><div class="float-rune">✧</div></div>
+      </div>
+      <button class="text-btn" id="confirmLook">CONFIRMAR PERSONAJE <span>↗</span></button>
+    </section>
+
+    <section class="screen final-screen" id="final" aria-labelledby="finalTitle">
+      <div class="final-orbit o1"></div><div class="final-orbit o2"></div><div class="confetti" aria-hidden="true"></div>
+      <div class="final-content"><p class="eyebrow"><span class="line"></span> MISIÓN COMPLETADA <span class="line"></span></p><div class="trophy">✦</div><h2 id="finalTitle">FELIZ<br><em>CUMPLEAÑOS</em><span>!</span></h2><p class="final-message">Que esta nueva vuelta al sol venga llena de<br>aventuras, descubrimientos y momentos que brillen.</p><div class="letter"><div class="letter-top"><span>MENSAJE DESBLOQUEADO</span><span>★ ★ ★</span></div><p>Para vos, en tu día:</p><p class="letter-edit">Ojalá hoy encuentres motivos para sonreír, tiempo para disfrutar lo que te gusta y muchas aventuras nuevas por delante. Que este año te sorprenda de formas bonitas.</p><div class="letter-bottom">CON CARIÑO <span>♥</span></div></div><button id="replayBtn" class="text-btn">↻ JUGAR OTRA VEZ</button></div>
+    </section>
+  </main>
+  <footer><span>MADE OF PIXELS & GOOD WISHES</span><span>♥</span><span>CONTINÚA BRILLANDO</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
