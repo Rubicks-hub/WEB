@@ -80,23 +80,53 @@
       <button class="text-btn" id="confirmLook" type="button">CONFIRMAR PERSONAJE <span aria-hidden="true">↗</span></button>
     </section>
 
-    <section class="screen chapter mission" id="mapa" aria-labelledby="mapTitle" hidden>
-      <div class="section-head"><p class="eyebrow">CAPÍTULO 02 <span class="line" aria-hidden="true"></span> EL VALLE</p><div class="progress-label">HALLAZGOS <b id="progressText">0 / 3</b></div></div>
-      <div class="mission-heading"><div><h2 id="mapTitle">Algo no pertenece<br><em>a este paisaje.</em></h2><p class="section-intro">Observa el valle y toca lo que te parezca fuera de lugar. Cada hallazgo revela una parte de la señal.</p></div><div class="hint-control"><button class="hint-btn" id="hintBtn" type="button">PEDIR PISTA <span aria-hidden="true">?</span></button><p id="hintText" class="hint-text" role="status" aria-live="polite">El camino guarda secretos a plena vista.</p></div></div>
-      <div class="map-world" id="mapWorld" aria-label="Escenario explorable del Valle de los Deseos">
-        <div class="map-sky" aria-hidden="true"><span class="map-cloud c1"></span><span class="map-cloud c2"></span><span class="map-star">✧</span><span class="map-star">✦</span></div>
-        <div class="map-moon" aria-hidden="true"></div><div class="map-hill hill1" aria-hidden="true"></div><div class="map-hill hill2" aria-hidden="true"></div><div class="map-path" aria-hidden="true"></div>
-        <div class="map-tree tree-left" aria-hidden="true"><i></i><b></b></div><div class="map-tree tree-right" aria-hidden="true"><i></i><b></b></div>
-        <div class="ruin" aria-hidden="true"><i></i><b></b><span></span></div>
-        <button class="search-point point-moth" type="button" data-id="moth" aria-label="Investigar el destello entre las ramas" aria-pressed="false"><span class="moth-wing" aria-hidden="true"></span><span class="moth-glint" aria-hidden="true">✧</span><span class="sr-only">Investigar el destello entre las ramas</span></button>
-        <button class="search-point point-rune" type="button" data-id="rune" aria-label="Investigar la marca en la piedra antigua" aria-pressed="false"><span class="rune-mark" aria-hidden="true">ᛟ</span><span class="sr-only">Investigar la marca en la piedra antigua</span></button>
-        <button class="search-point point-pouch" type="button" data-id="pouch" aria-label="Investigar el objeto junto al sendero" aria-pressed="false"><span class="pouch-shape" aria-hidden="true"></span><span class="sr-only">Investigar el objeto junto al sendero</span></button>
-        <div class="map-figure" aria-label="Tu personaje personalizado"><div class="avatar small-avatar" aria-hidden="true"><div class="avatar-hair"></div><div class="avatar-face"><i></i><i></i></div><div class="avatar-body"></div><div class="avatar-cape"></div><span class="hat">✦</span></div></div>
-        <div class="map-sign">VALLE DE LOS<br>DESEOS <span aria-hidden="true">✦</span></div>
-        <div class="map-bottom"><span>ÁREA 01</span><span>TOCA UN OBJETO PARA INVESTIGAR</span><span id="mapStatus">BUSCA 3 PISTAS</span></div>
+    <section class="screen chapter boss-screen" id="boss" aria-labelledby="bossTitle" hidden>
+      <div class="section-head">
+        <p class="eyebrow">CAPÍTULO 02 <span class="line" aria-hidden="true"></span> EL UMBRAL</p>
+        <div class="hearts-panel" id="heartsPanel" aria-label="Vida: tres corazones">
+          <span class="hearts-label">VIDA</span><span class="heart" data-heart="1" aria-hidden="true">♥</span><span class="heart" data-heart="2" aria-hidden="true">♥</span><span class="heart" data-heart="3" aria-hidden="true">♥</span>
+        </div>
       </div>
-      <div class="fragment-log" id="fragmentLog" role="status" aria-live="polite"><span class="log-icon" aria-hidden="true">✦</span><span id="fragmentText">Los objetos extraños guardan fragmentos de una señal.</span></div>
-      <div class="achievement" id="achievement" role="status" aria-live="polite"><span aria-hidden="true">✦</span><div><b id="achievementTitle">PISTA ENCONTRADA</b><small id="achievementSub">Un fragmento más cerca.</small></div></div>
+      <div class="boss-heading">
+        <div><h2 id="bossTitle">El guardián<br><em>desafía tu ritmo.</em></h2><p class="section-intro">Esquiva cuando el marcador cruce la zona dorada. Luego, golpea el núcleo expuesto con precisión.</p></div>
+        <div class="round-status"><span>RONDA</span><b id="roundNumber">01 <small>/ 03</small></b></div>
+      </div>
+      <div class="boss-hud">
+        <div class="boss-label"><span class="boss-emblem" aria-hidden="true">◈</span><div><b>GUARDIÁN DEL UMBRAL</b><small id="bossMood">Una presencia antigua bloquea el paso.</small></div></div>
+        <div class="boss-health"><span>ENERGÍA</span><div class="health-track" id="bossHealth" role="progressbar" aria-label="Energía del guardián" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3"><span class="health-fill" id="bossHealthFill"></span></div><b id="bossHealthText">3 / 3</b></div>
+      </div>
+      <div class="boss-arena" id="arena" aria-label="Arena de combate">
+        <div class="arena-sky" aria-hidden="true"><span class="arena-moon"></span><i class="arena-star star-a">✦</i><i class="arena-star star-b">✧</i></div>
+        <div class="arena-ruin ruin-a" aria-hidden="true"></div><div class="arena-ruin ruin-b" aria-hidden="true"></div>
+        <div class="arena-light" aria-hidden="true"></div><div class="arena-floor" aria-hidden="true"></div>
+        <div class="arena-horizon" aria-hidden="true"></div>
+        <div class="fighter player-fighter" id="playerFighter" aria-label="Tu personaje">
+          <div class="fighter-shadow" aria-hidden="true"></div><div class="avatar battle-avatar" aria-hidden="true"><div class="avatar-hair"></div><div class="avatar-face"><i></i><i></i></div><div class="avatar-body"></div><div class="avatar-cape"></div><span class="hat">✦</span><span class="battle-blade">╱</span></div>
+          <span class="fighter-name">PLAYER 01</span>
+        </div>
+        <div class="arena-effects" id="arenaEffects" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="fighter boss-fighter" id="bossFighter" aria-label="Guardián del Umbral">
+          <div class="fighter-shadow" aria-hidden="true"></div>
+          <div class="monster" aria-hidden="true"><span class="horn horn-left"></span><span class="horn horn-right"></span><span class="monster-head"><i class="monster-eye eye-left"></i><i class="monster-eye eye-right"></i><i class="monster-mouth"></i></span><span class="monster-neck"></span><span class="monster-body"><i class="monster-core"></i></span><span class="monster-arm arm-left"></span><span class="monster-arm arm-right"></span><span class="monster-leg leg-left"></span><span class="monster-leg leg-right"></span></div>
+          <span class="fighter-name">GUARDIÁN</span>
+        </div>
+        <div class="danger-mark" id="dangerMark" aria-hidden="true">!</div>
+        <div class="arena-caption"><span>ARENA DEL UMBRAL</span><span id="phaseCaption">OBSERVA SUS MOVIMIENTOS</span><span>◈</span></div>
+        <div class="outcome-overlay" id="outcomeOverlay" hidden role="status" aria-live="assertive">
+          <span class="outcome-spark" aria-hidden="true">✦</span><h3 id="outcomeTitle">VICTORIA</h3><p id="outcomeText">El guardián baja la guardia.</p><button id="retryBtn" class="primary-btn retry-btn" type="button" hidden>REINTENTAR COMBATE <span aria-hidden="true">↻</span></button>
+        </div>
+      </div>
+      <div class="combat-panel">
+        <p class="combat-feedback" id="combatFeedback" role="status" aria-live="polite">Prepárate: el duelo comienza en un momento.</p>
+        <div class="timing-controls">
+          <div class="timing-readout"><span id="gaugeLabel">ESPERA LA SEÑAL</span><div class="timing-gauge" id="timingGauge" aria-hidden="true"><span class="target-zone"></span><span class="timing-marker"></span></div><small>LA ZONA DORADA MARCA EL MOMENTO</small></div>
+          <div class="combat-buttons">
+            <button class="combat-btn dodge-btn" id="dodgeBtn" type="button" disabled aria-keyshortcuts="Space ArrowDown"><span aria-hidden="true">↘</span> ESQUIVAR <kbd>ESPACIO / ↓</kbd></button>
+            <button class="combat-btn attack-btn" id="attackBtn" type="button" disabled aria-keyshortcuts="Z Enter"><span aria-hidden="true">⚔</span> ATACAR <kbd>Z / ENTER</kbd></button>
+          </div>
+        </div>
+      </div>
+      <div class="achievement" id="achievement" role="status" aria-live="polite"><span aria-hidden="true">✦</span><div><b id="achievementTitle">ESQUIVA PERFECTA</b><small id="achievementSub">A tiempo.</small></div></div>
     </section>
 
     <section class="screen final-screen" id="final" aria-labelledby="finalTitle" hidden>
@@ -114,7 +144,7 @@
             <div class="letter-top"><span>MENSAJE DESBLOQUEADO</span><span aria-hidden="true">★ ★ ★</span></div>
             <div class="letter-player"><span class="letter-avatar-wrap" aria-hidden="true"><span class="avatar letter-avatar"><span class="avatar-hair"></span><span class="avatar-face"><i></i><i></i></span><span class="avatar-body"></span><span class="avatar-cape"></span><span class="hat">✦</span></span></span><span>PLAYER 01 · TU PERSONAJE TE ACOMPAÑÓ HASTA EL FINAL</span></div>
             <p class="letter-greeting">Para vos, en tu día:</p>
-            <p class="letter-edit">Hoy el mundo sube de nivel para celebrar que estás acá. Ojalá esta nueva vuelta venga con la energía de una partida que no querés pausar, mundos que te den ganas de perderte en ellos y páginas de manga que te hagan mirar cada trazo dos veces. Te deseo muchas razones para reír, descansar y elegir tu próxima aventura a tu manera.</p>
+            <p class="letter-edit">Aunque sea un detallito sencillo, espero que te guste. Te merecés esto y muchísimo más. Le agradezco a Dios haberte conocido y tener tu amistad. Un año más grande, pero para mí siempre vas a ser mi hermanita pequeña. Te quiero muchísimo y te deseo un año lleno de momentos bonitos, muchas risas, tranquilidad y oportunidades para hacer todo aquello que te haga feliz. Y sobre Dante... no sé por qué pensé que iba a encajar mejor en esta escena. No salió exactamente como lo imaginaba, así que fingí que sí. Vos hacé lo mismo, ¿eh?</p>
             <p class="letter-wish">Feliz cumpleaños.</p>
             <div class="letter-bottom">CON CARIÑO <span aria-hidden="true">♥</span></div>
           </article>
