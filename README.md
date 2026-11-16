@@ -1,6 +1,6 @@
 # Save Point — cumpleaños interactivo
 
-Experiencia web interactiva de cumpleaños hecha con HTML, CSS y JavaScript sin dependencias de instalación.
+Experiencia web interactiva de cumpleaños hecha con HTML, CSS y JavaScript sin dependencias de instalación. El recorrido es: inicio, personalización, búsqueda en el valle y carta final.
 
 ## Abrir
 
@@ -12,5 +12,6 @@ Abre `index.html` en un navegador moderno. No hace falta servidor ni conexión a
 - Cambia títulos, deseos y etiquetas directamente en el HTML.
 - La aventura, el selector de personaje, los destellos y el control de sonido están en `script.js`.
 - Los colores, animaciones y ajustes responsive están en `style.css`.
+- Para cambiar el personaje de cierre, edita `featuredCharacter`, `featuredCharacterImage` y `featuredCharacterAlt` al comienzo de `script.js` y reemplaza el recurso en `assets/`.
 
-La dirección visual toma los videojuegos dinámicos como preferencia confirmada y deja las demás referencias como inspiración secundaria. Los tres archivos de preferencias mencionados en el brief no estaban en la carpeta al momento de crear esta versión.
+La ilustración provisional de Dante en `assets/dante-provisional.png` fue creada para este proyecto; no depende de un enlace ni de un recurso externo. Los archivos de preferencias no están incluidos en el repositorio; la dirección visual usa las categorías descritas en el brief y mantiene Dante como elección provisional.
